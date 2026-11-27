@@ -370,7 +370,7 @@ blockquote{margin:0;font-family:Georgia,serif;font-size:clamp(1.7rem,6.2vw,2.5re
   $('wa').addEventListener('click', function () {
     var me = current;
     if (me.file && canShareFile(me.file)) {
-      navigator.share({ files: [me.file], text: caption() }).catch(function (err) {
+      navigator.share({ files: [me.file] }).catch(function (err) {
         if (err && err.name === 'AbortError') return; // person closed the share menu
         download(me.blob); toast('Card downloaded. Attach it in WhatsApp.');
       });
